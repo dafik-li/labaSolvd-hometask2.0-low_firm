@@ -14,7 +14,7 @@ public class Employees {
                char sex,
                int experience) {
         this.setName(name);
-        this.surname = surname;
+        this.setSurname(surname);
         this.age = age;
         this.sex = sex;
         this.experience = experience;
