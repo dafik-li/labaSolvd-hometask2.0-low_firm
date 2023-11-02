@@ -1,23 +1,57 @@
 package com.labasolvd;
 
 
+import java.util.Scanner;
+
 public class Main {
 
-    private Result result;
+
+    public static void main(String[] args) throws Exception {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type the data below: ");
+        System.out.println("Choose one type of the crime: ");
+        System.out.println("hooliganism");
+        System.out.println("robbery");
+        System.out.println("homicide");
+        String crimeName = scanner.nextLine();
+        System.out.println("Enter the solicitor level (from 1 - to 10): ");
+        int levelSolicitor = scanner.nextInt();
+        System.out.println("Enter the prosecutor level (from 1 - to 10): ");
+        int levelProsecutor = scanner.nextInt();
+        System.out.println("Is arrested before?:  '1' - yes, '0' - no");
+        int numberForArrested = scanner.nextInt();
+        boolean wasArrestedBefore;
+        if (numberForArrested == 1) {
+            wasArrestedBefore = true;
+        } else if (numberForArrested == 0) {
+            wasArrestedBefore = false;
+        } else {
+            throw new Exception("Keep your eyes open");
+        }
 
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+        SolicitorPersona solicitor = new SolicitorPersona('m', "dima", "pupkin", 30, levelSolicitor);
+        ProsecutorPersona prosecutor = new ProsecutorPersona('m', "petya", "ivanov", 40, levelProsecutor);
+        SuspectedPersona suspected = new SuspectedPersona('f', "ira", "petrova", 25, wasArrestedBefore);
+        HooliganismCrime hooliganism = new HooliganismCrime();
+        RobberyCrime robbery = new RobberyCrime();
+        HomicideCrime homicide = new HomicideCrime();
+        CalcResult calcResult = new CalcResult();
+        AbstractCrime crime;
+        switch (crimeName) {
+            case "homicide": crime = new HomicideCrime();
+            break;
+            case "robbery": crime = new RobberyCrime();
+            break;
+            case "hooliganism": crime = new HooliganismCrime();
+            break;
+            default: crime = new DefaultCrime();
+        }
+        double resultYears = calcResult.execute(wasArrestedBefore, levelSolicitor, levelProsecutor, crime.getTermOfPunishment());
+        Result result = new Result(resultYears, suspected);
 
 
-        Prosecutor prosecutor = new Prosecutor('m', "petya", "ivanov", 40, 5);
-        Suspected suspected = new Suspected('f', "ira", "petrova", 25, true);
-        Solicitor solicitor = new Solicitor('m', "dima", "pupkin", 30, 8);
-        Hooliganism hooliganism = new Hooliganism("Hooliganism", 5);
-        Robbery robbery = new Robbery("Robbery", 10);
-        Homicide homicide = new Homicide("Homicide", 20);
-        Result result = new Result(5.0);
-
-        System.out.println(result.calcResult());
-
+        System.out.println(result);
     }
 }
