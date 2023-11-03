@@ -5,12 +5,12 @@ public class Result {
 
 
     private double resultYears;
-    private SuspectedPersona suspected;
+    private SuspectedPersona suspectedPersona;
 
 
-    public Result(double resultYears, SuspectedPersona suspected) {
+    public Result(double resultYears, SuspectedPersona suspectedPersona) {
         this.resultYears = resultYears;
-        this.suspected = suspected;
+        this.suspectedPersona = suspectedPersona;
     }
 
 
@@ -22,17 +22,17 @@ public class Result {
         this.resultYears = resultYears;
     }
 
-    public SuspectedPersona getSuspected() {
-        return suspected;
+    public SuspectedPersona getSuspectedPersona() {
+        return suspectedPersona;
     }
 
-    public void setSuspected(SuspectedPersona suspected) {
-        this.suspected = suspected;
+    public void setSuspectedPersona(SuspectedPersona suspectedPersona) {
+        this.suspectedPersona = suspectedPersona;
     }
 
 
     @Override
     public String toString() {
-        return resultYears + "\n" + suspected.name + "\n" + suspected.surname;
+        return resultYears + "\n" + suspectedPersona.name + "\n" + suspectedPersona.surname;
     }
 }

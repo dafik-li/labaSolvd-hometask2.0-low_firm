@@ -8,6 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Type the data below: ");
         System.out.println("Choose one type of the crime: ");
@@ -15,9 +16,9 @@ public class Main {
         System.out.println("robbery");
         System.out.println("homicide");
         String crimeName = scanner.nextLine();
-        System.out.println("Enter the solicitor level (from 1 - to 10): ");
+        System.out.println("Enter the solicitor level (from 1 - to 3): ");
         int levelSolicitor = scanner.nextInt();
-        System.out.println("Enter the prosecutor level (from 1 - to 10): ");
+        System.out.println("Enter the prosecutor level (from 1 - to 3): ");
         int levelProsecutor = scanner.nextInt();
         System.out.println("Is arrested before?:  '1' - yes, '0' - no");
         int numberForArrested = scanner.nextInt();
@@ -50,8 +51,12 @@ public class Main {
         }
         double resultYears = calcResult.execute(wasArrestedBefore, levelSolicitor, levelProsecutor, crime.getTermOfPunishment());
         Result result = new Result(resultYears, suspected);
+        CalcTotalSum calcTotalSum = new CalcTotalSum();
+        double sum = calcTotalSum.execute(levelSolicitor, crime.getTermOfPunishment());
+        TotalSum totalSum = new TotalSum(sum);
 
 
-        System.out.println(result);
+        System.out.println("Court decision: " + result + "years");
+        System.out.println("Congratulation! You must pay: " + totalSum);
     }
 }
