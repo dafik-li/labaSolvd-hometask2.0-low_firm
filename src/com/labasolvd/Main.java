@@ -10,7 +10,7 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type the data below: " + "\n" + "_________________________________________________________");
+        System.out.println("_________________________________________________________" + "\n" + "Type the data below: " + "\n");
         System.out.print("Type of the crime (homicide, robbery, hooliganism): ");
         String crimeName = scanner.nextLine();
 
@@ -89,8 +89,7 @@ public class Main {
 
 
         System.out.println("_________________________________________________________");
-        System.out.println(result);
-        System.out.println("_________________________________________________________");
-        System.out.println("Congratulation! You must pay: " + totalSum);
+        System.out.println(result + "\n" + "_________________________________________________________");
+        System.out.println("The payment is: " + totalSum);
     }
 }
