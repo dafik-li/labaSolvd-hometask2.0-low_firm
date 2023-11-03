@@ -33,6 +33,6 @@ public class Result {
 
     @Override
     public String toString() {
-        return resultYears + "\n" + suspectedPersona.name + "\n" + suspectedPersona.surname;
+        return "Court decision: " + resultYears + "\n" + "Name: " + suspectedPersona.name + "\n" + "Surname: " + suspectedPersona.surname;
     }
 }

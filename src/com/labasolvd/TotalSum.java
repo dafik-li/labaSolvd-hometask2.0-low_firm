@@ -21,6 +21,7 @@ public class TotalSum {
     }
 
 
+
     public String toString() {
         return String.valueOf(sum);
     }

@@ -5,7 +5,7 @@ public class CalcResult {
 
 
 
-    public double execute(boolean wasArrestedBefore, int solicitorLevel, int prosecutorLevel, int yearsForPunishment) {
+    public double execute(boolean wasArrestedBefore, int solicitorLevel, int prosecutorLevel, int yearsForPunishment) throws Exception {
 
 
         double resultYears;
@@ -19,7 +19,7 @@ public class CalcResult {
         }
 
 
-        resultYears = ratio * yearsForPunishment / ((double) solicitorLevel / prosecutorLevel);
+        resultYears = (ratio * yearsForPunishment) / ((double) solicitorLevel / prosecutorLevel);
         return resultYears;
     }
 }

@@ -10,17 +10,57 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type the data below: ");
-        System.out.println("Choose one type of the crime: ");
-        System.out.println("hooliganism");
-        System.out.println("robbery");
-        System.out.println("homicide");
+        System.out.println("Type the data below: " + "\n" + "_________________________________________________________");
+        System.out.print("Type of the crime (homicide, robbery, hooliganism): ");
         String crimeName = scanner.nextLine();
-        System.out.println("Enter the solicitor level (from 1 - to 3): ");
+
+
+        AbstractCrime crime;
+        switch (crimeName) {
+            case "homicide": crime = new HomicideCrime();
+                break;
+            case "robbery": crime = new RobberyCrime();
+                break;
+            case "hooliganism": crime = new HooliganismCrime();
+                break;
+            default: crime = new DefaultCrime();
+        }
+
+
+        if (!crimeName.equals(crime.getTypeOfCrime())) {
+            throw new Exception("Sometimes laws don't matter!");
+        } else {
+            System.out.println();
+        }
+
+
+        System.out.print("Enter the solicitor level (from 1 - to 3): ");
+
+
         int levelSolicitor = scanner.nextInt();
-        System.out.println("Enter the prosecutor level (from 1 - to 3): ");
+        if (levelSolicitor > 3) {
+            throw new Exception("Too big solicitor level!");
+        } else if (levelSolicitor < 1) {
+            throw new Exception("Too small solicitor level!");
+        } else {
+            System.out.println();
+        }
+
+
+        System.out.print("Enter the prosecutor level (from 1 - to 3): ");
+
+
         int levelProsecutor = scanner.nextInt();
-        System.out.println("Is arrested before?:  '1' - yes, '0' - no");
+        if (levelProsecutor > 3) {
+            throw new Exception("Too big solicitor level!");
+        } else if (levelProsecutor < 1) {
+            throw new Exception("Too small solicitor level!");
+        } else {
+            System.out.println();
+        }
+
+
+        System.out.print("Is arrested before (1 - yes, 0 - no)? : ");
         int numberForArrested = scanner.nextInt();
         boolean wasArrestedBefore;
         if (numberForArrested == 1) {
@@ -38,17 +78,9 @@ public class Main {
         HooliganismCrime hooliganism = new HooliganismCrime();
         RobberyCrime robbery = new RobberyCrime();
         HomicideCrime homicide = new HomicideCrime();
+
+
         CalcResult calcResult = new CalcResult();
-        AbstractCrime crime;
-        switch (crimeName) {
-            case "homicide": crime = new HomicideCrime();
-            break;
-            case "robbery": crime = new RobberyCrime();
-            break;
-            case "hooliganism": crime = new HooliganismCrime();
-            break;
-            default: crime = new DefaultCrime();
-        }
         double resultYears = calcResult.execute(wasArrestedBefore, levelSolicitor, levelProsecutor, crime.getTermOfPunishment());
         Result result = new Result(resultYears, suspected);
         CalcTotalSum calcTotalSum = new CalcTotalSum();
@@ -56,7 +88,9 @@ public class Main {
         TotalSum totalSum = new TotalSum(sum);
 
 
-        System.out.println("Court decision: " + result + "years");
+        System.out.println("_________________________________________________________");
+        System.out.println(result);
+        System.out.println("_________________________________________________________");
         System.out.println("Congratulation! You must pay: " + totalSum);
     }
 }
