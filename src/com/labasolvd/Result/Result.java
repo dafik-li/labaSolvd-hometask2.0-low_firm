@@ -5,10 +5,8 @@ import com.labasolvd.Persons.SuspectedPersona;
 
 public class Result {
 
-
     private double resultYears;
     private SuspectedPersona suspectedPersona;
-
 
 
     public Result(double resultYears, SuspectedPersona suspectedPersona) {
@@ -35,6 +33,6 @@ public class Result {
 
     @Override
     public String toString() {
-        return "Court decision: " + resultYears + "\n" + "Name: " + suspectedPersona.getName() + "\n" + "Surname: " + suspectedPersona.getSurname();
+        return "Court decision: " + getResultYears() + "\n" + getSuspectedPersona();
     }
 }

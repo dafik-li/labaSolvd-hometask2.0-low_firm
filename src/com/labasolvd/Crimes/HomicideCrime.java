@@ -2,7 +2,6 @@ package com.labasolvd.Crimes;
 
 public class HomicideCrime extends AbstractCrime {
 
-
     protected String typeOfCrime = "homicide";
     protected int termOfPunishment = 20;
 

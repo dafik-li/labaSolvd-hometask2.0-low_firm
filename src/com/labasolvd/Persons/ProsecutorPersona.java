@@ -2,9 +2,7 @@ package com.labasolvd.Persons;
 
 public class ProsecutorPersona extends AbstractPersona {
 
-
     private int level;
-
 
 
     public ProsecutorPersona(char gender, String name, String surname, int age, int level) {
@@ -24,6 +22,6 @@ public class ProsecutorPersona extends AbstractPersona {
 
     @Override
     public String toString() {
-        return super.toString() + "\n" + level;
+        return super.toString() + "\n" + " Level: " + getLevel();
     }
 }

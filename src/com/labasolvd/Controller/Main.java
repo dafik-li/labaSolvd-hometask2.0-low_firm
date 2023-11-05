@@ -6,11 +6,13 @@ import com.labasolvd.Persons.ProsecutorPersona;
 import com.labasolvd.Persons.SolicitorPersona;
 import com.labasolvd.Persons.SuspectedPersona;
 import com.labasolvd.Result.Result;
-import com.labasolvd.Result.TotalSum;
 
 import java.util.Scanner;
 
 public class Main {
+
+    private static Object Result = null;
+    private static double sum;
 
 
     public static void main(String[] args) throws Exception {
@@ -88,12 +90,12 @@ public class Main {
         HomicideCrime homicide = new HomicideCrime();
 
 
-        CalcResult calcResult = new CalcResult();
-        double resultYears = calcResult.execute(wasArrestedBefore, levelSolicitor, levelProsecutor, crime.getTermOfPunishment());
+        CourtSession calcResult = new CourtSession((com.labasolvd.Result.Result) Result, sum);
+        double resultYears = calcResult.exeCalcResult(wasArrestedBefore, levelSolicitor, levelProsecutor, crime.getTermOfPunishment());
         Result result = new Result(resultYears, suspected);
-        CalcTotalSum calcTotalSum = new CalcTotalSum();
-        double sum = calcTotalSum.execute(levelSolicitor, crime.getTermOfPunishment());
-        TotalSum totalSum = new TotalSum(sum);
+        CourtSession calcTotalSum = new CourtSession(result, sum);
+        double sum = calcTotalSum.exeCalcSum(levelSolicitor, crime.getTermOfPunishment());
+        CourtSession totalSum = new CourtSession(result, sum);
 
 
         System.out.println("_________________________________________________________");

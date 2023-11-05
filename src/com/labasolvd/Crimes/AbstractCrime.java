@@ -6,7 +6,6 @@ abstract public class AbstractCrime {
     protected int termOfPunishment;
 
 
-
     public String getTypeOfCrime() {
         return typeOfCrime;
     }

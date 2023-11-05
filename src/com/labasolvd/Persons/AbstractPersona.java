@@ -2,12 +2,10 @@ package com.labasolvd.Persons;
 
 abstract public class AbstractPersona {
 
-
     protected char gender;
     protected String name;
     protected String surname;
     protected int age;
-
 
 
     public AbstractPersona(char gender, String name, String surname, int age) {
@@ -53,6 +51,6 @@ abstract public class AbstractPersona {
 
     @Override
     public String toString() {
-        return gender + "\n" + name + "\n" + surname + "\n" + age;
+        return "Gender: " + getGender() + "\n" + "Name: " + getName() + "\n" + "Surname: " + getSurname() + "\n" + "Age: " + getAge();
     }
 }

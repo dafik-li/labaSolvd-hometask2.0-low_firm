@@ -2,9 +2,7 @@ package com.labasolvd.Persons;
 
 public class SuspectedPersona extends AbstractPersona {
 
-
     private boolean wasArrestedBefore;
-
 
 
     public SuspectedPersona(char gender, String name, String surname, int age, boolean wasArrestedBefore) {
@@ -20,8 +18,9 @@ public class SuspectedPersona extends AbstractPersona {
         this.wasArrestedBefore = wasArrestedBefore;
     }
 
+
     @Override
     public String toString() {
-        return super.toString() + "\n" + wasArrestedBefore;
+        return super.toString() + "\n" + "Was arrested before: " + isWasArrestedBefore();
     }
 }
