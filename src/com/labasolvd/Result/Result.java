@@ -3,22 +3,24 @@ package com.labasolvd.Result;
 
 import com.labasolvd.Persons.SuspectedPersona;
 
+import java.text.DecimalFormat;
+
 public class Result {
 
-    private double resultYears;
+    private Double resultYears;
     private SuspectedPersona suspectedPersona;
 
 
-    public Result(double resultYears, SuspectedPersona suspectedPersona) {
+    public Result(Double resultYears, SuspectedPersona suspectedPersona) {
         this.resultYears = resultYears;
         this.suspectedPersona = suspectedPersona;
     }
 
-    public double getResultYears() {
+    public Double getResultYears() {
         return resultYears;
     }
 
-    public void setResultYears(double resultYears) {
+    public void setResultYears(Double resultYears) {
         this.resultYears = resultYears;
     }
 
