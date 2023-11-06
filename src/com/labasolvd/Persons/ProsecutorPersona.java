@@ -1,27 +1,23 @@
 package com.labasolvd.Persons;
 
-public class ProsecutorPersona extends AbstractPersona {
+import com.labasolvd.Result.GettingProsecutorLevel;
 
-    private int level;
+public class ProsecutorPersona extends AbstractPersona implements GettingProsecutorLevel {
+    private int prosecutorLevel;
 
-
-    public ProsecutorPersona(char gender, String name, String surname, int age, int level) {
+    public ProsecutorPersona(char gender, String name, String surname, int age, int prosecutorLevel) {
         super(gender, name, surname, age);
-        this.level = level;
+        this.prosecutorLevel = prosecutorLevel;
     }
-
-
-    public int getLevel() {
-        return level;
+    @Override
+    public int getProsecutorLevel() {
+        return prosecutorLevel;
     }
-
-    public void setLevel(int level) {
-        this.level = level;
+    public void setProsecutorLevel(int prosecutorLevel) {
+        this.prosecutorLevel = prosecutorLevel;
     }
-
-
     @Override
     public String toString() {
-        return super.toString() + "\n" + " Level: " + getLevel();
+        return super.toString() + "\n" + "Level: " + getProsecutorLevel();
     }
 }
