@@ -1,8 +1,8 @@
-package com.labasolvd.Crimes;
+package com.labasolvd.Entity.Crimes;
 
-public class RobberyCrime extends AbstractCrime {
-    protected String typeOfCrime = "robbery";
-    protected int termOfPunishment = 10;
+public class HomicideCrime extends AbstractCrime {
+    protected String typeOfCrime = "homicide";
+    protected int termOfPunishment = 20;
 
     @Override
     public String getTypeOfCrime() {

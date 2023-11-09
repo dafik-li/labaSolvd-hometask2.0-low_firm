@@ -1,7 +1,7 @@
 package com.labasolvd.Result;
 
-import com.labasolvd.Persons.LevelProsecutorInterface;
-import com.labasolvd.Persons.ProsecutorPersona;
+import com.labasolvd.Entity.Persons.LevelProsecutorInterface;
+import com.labasolvd.Entity.Persons.ProsecutorPersona;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 

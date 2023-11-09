@@ -1,7 +1,7 @@
 package com.labasolvd.Result;
 
-import com.labasolvd.Persons.LevelSolicitorInterface;
-import com.labasolvd.Persons.SolicitorPersona;
+import com.labasolvd.Entity.Persons.LevelSolicitorInterface;
+import com.labasolvd.Entity.Persons.SolicitorPersona;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import java.util.Scanner;

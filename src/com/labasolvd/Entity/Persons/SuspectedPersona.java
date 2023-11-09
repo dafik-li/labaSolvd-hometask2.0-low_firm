@@ -1,4 +1,4 @@
-package com.labasolvd.Persons;
+package com.labasolvd.Entity.Persons;
 
 public class SuspectedPersona extends AbstractPersona {
     private boolean wasArrestedBefore;

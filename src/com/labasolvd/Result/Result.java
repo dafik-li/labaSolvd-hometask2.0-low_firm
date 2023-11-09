@@ -1,8 +1,8 @@
 package com.labasolvd.Result;
 
-import com.labasolvd.Persons.ProsecutorPersona;
-import com.labasolvd.Persons.SolicitorPersona;
-import com.labasolvd.Persons.SuspectedPersona;
+import com.labasolvd.Entity.Persons.ProsecutorPersona;
+import com.labasolvd.Entity.Persons.SolicitorPersona;
+import com.labasolvd.Entity.Persons.SuspectedPersona;
 
 public final class Result {
     private double resultYears;

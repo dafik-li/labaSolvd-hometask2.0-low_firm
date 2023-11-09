@@ -1,4 +1,4 @@
-package com.labasolvd.Persons;
+package com.labasolvd.Entity.Persons;
 
 abstract public class AbstractPersona implements PersonInterface {
     protected char gender;

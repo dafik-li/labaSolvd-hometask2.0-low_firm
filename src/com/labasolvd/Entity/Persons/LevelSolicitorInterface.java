@@ -1,4 +1,4 @@
-package com.labasolvd.Persons;
+package com.labasolvd.Entity.Persons;
 
 public interface LevelSolicitorInterface {
     int getSolicitorLevel() throws Exception;

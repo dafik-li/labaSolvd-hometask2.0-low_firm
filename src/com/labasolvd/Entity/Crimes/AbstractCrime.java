@@ -1,4 +1,4 @@
-package com.labasolvd.Crimes;
+package com.labasolvd.Entity.Crimes;
 
 abstract public class AbstractCrime implements CrimeInterface{
     protected String typeOfCrime;

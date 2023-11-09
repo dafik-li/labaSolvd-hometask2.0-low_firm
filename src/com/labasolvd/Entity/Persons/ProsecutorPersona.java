@@ -1,4 +1,4 @@
-package com.labasolvd.Persons;
+package com.labasolvd.Entity.Persons;
 
 public class ProsecutorPersona extends AbstractPersona implements LevelProsecutorInterface {
     private int level;

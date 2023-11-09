@@ -1,4 +1,4 @@
-package com.labasolvd.Crimes;
+package com.labasolvd.Entity.Crimes;
 
 public class HooliganismCrime extends AbstractCrime {
     protected String typeOfCrime = "hooliganism";

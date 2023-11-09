@@ -1,6 +1,4 @@
-package com.labasolvd.Crimes;
-
-import com.labasolvd.Crimes.AbstractCrime;
+package com.labasolvd.Entity.Crimes;
 
 public class DefaultCrime extends AbstractCrime {
     protected String typeOfCrime = "Default";

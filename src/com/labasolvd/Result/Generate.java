@@ -1,8 +1,8 @@
 package com.labasolvd.Result;
 
-import com.labasolvd.Crimes.*;
+import com.labasolvd.Entity.Crimes.*;
 import com.labasolvd.Exceptions.CrimetypeException;
-import com.labasolvd.Persons.*;
+import com.labasolvd.Entity.Persons.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import java.io.File;

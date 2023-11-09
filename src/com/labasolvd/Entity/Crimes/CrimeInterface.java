@@ -1,4 +1,4 @@
-package com.labasolvd.Crimes;
+package com.labasolvd.Entity.Crimes;
 
 public interface CrimeInterface {
     String getTypeOfCrime();
