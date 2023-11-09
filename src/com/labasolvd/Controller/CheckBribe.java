@@ -1,10 +1,10 @@
 package com.labasolvd.Controller;
 
-import com.labasolvd.Result.Bribe;
+import com.labasolvd.Result.GiveBribe;
 
 public class CheckBribe {
     public static void main(String[] args) throws Exception {
-        Bribe bribe = new Bribe();
-        bribe.getResult();
+        GiveBribe bribe = new GiveBribe();
+        bribe.getBribe();
     }
 }

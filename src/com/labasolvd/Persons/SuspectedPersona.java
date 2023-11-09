@@ -1,13 +1,12 @@
 package com.labasolvd.Persons;
 
-public class SuspectedPersona extends AbstractPersona implements ArrestedBefore {
+public class SuspectedPersona extends AbstractPersona {
     private boolean wasArrestedBefore;
 
     public SuspectedPersona(char gender, String name, String surname, int age, boolean wasArrestedBefore) {
         super(gender, name, surname, age);
         this.wasArrestedBefore = wasArrestedBefore;
     }
-    @Override
     public boolean isWasArrestedBefore() {
         return wasArrestedBefore;
     }

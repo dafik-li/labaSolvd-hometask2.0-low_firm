@@ -1,20 +1,18 @@
 package com.labasolvd.Persons;
 
-import com.labasolvd.Result.GettingSolicitorLevel;
+public class SolicitorPersona extends AbstractPersona implements LevelSolicitorInterface{
+    private int level;
 
-public class SolicitorPersona extends AbstractPersona implements GettingSolicitorLevel {
-    private int solicitorLevel;
-
-    public SolicitorPersona(char gender, String name, String surname, int age, int solicitorLevel) {
+    public SolicitorPersona(char gender, String name, String surname, int age, int level) {
         super(gender, name, surname, age);
-        this.solicitorLevel = solicitorLevel;
+        this.level = level;
     }
     @Override
     public int getSolicitorLevel() {
-        return solicitorLevel;
+        return level;
     }
-    public void setSolicitorLevel(int solicitorLevel) {
-        this.solicitorLevel = solicitorLevel;
+    public void setLevel(int level) {
+        this.level = level;
     }
     @Override
     public String toString() {

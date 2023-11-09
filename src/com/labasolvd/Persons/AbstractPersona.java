@@ -1,6 +1,6 @@
 package com.labasolvd.Persons;
 
-abstract public class AbstractPersona {
+abstract public class AbstractPersona implements PersonInterface {
     protected char gender;
     protected String name;
     protected String surname;
@@ -12,27 +12,35 @@ abstract public class AbstractPersona {
         this.surname = surname;
         this.age = age;
     }
+    @Override
     public char getGender() {
         return gender;
     }
+    @Override
     public void setGender(char gender) {
         this.gender = gender;
     }
+    @Override
     public String getName() {
         return name;
     }
+    @Override
     public void setName(String name) {
         this.name = name;
     }
+    @Override
     public String getSurname() {
         return surname;
     }
+    @Override
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    @Override
     public int getAge() {
         return age;
     }
+    @Override
     public void setAge(int age) {
         this.age = age;
     }
