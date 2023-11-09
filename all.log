@@ -1,4 +1,37 @@
-2023-11-09 16:02:37.379 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-09 23:39:18.085 [main] INFO  com.labasolvd.Result.Generate - Type the data below: 
+2023-11-09 23:39:18.095 [main] INFO  com.labasolvd.Result.Generate - 
 Type the data below: 
-2023-11-09 16:02:37.379 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-09 23:39:18.095 [main] INFO  com.labasolvd.Result.Generate - 
 Type of the crime (homicide, robbery, hooliganism): 
+2023-11-09 23:39:27.068 [main] INFO  com.labasolvd.Result.Generate - 
+Enter the solicitor level (from 1 - to 3): 
+2023-11-09 23:39:28.937 [main] INFO  com.labasolvd.Result.Generate - 
+Enter the prosecutor level (from 1 - to 3): 
+2023-11-09 23:39:30.542 [main] INFO  com.labasolvd.Result.Generate - 
+Is arrested before (1 - yes, 0 - no)?: 
+2023-11-09 23:39:32.116 [main] INFO  com.labasolvd.Result.Generate - 
+Court decision: 5.0 years
+
+Prisoner:___________________
+Gender: f
+Name: ira
+Surname: petrova
+Age: 25
+Was arrested before: true
+
+Solicitor:___________________
+Gender: m
+Name: dima
+Surname: pupkin
+Age: 30
+Level: 3
+
+Prosecutor:___________________
+Gender: m
+Name: petya
+Surname: ivanov
+Age: 40
+Level: 1
+
+2023-11-09 23:39:32.116 [main] INFO  com.labasolvd.Result.Generate - 
+The payment is: 6000.0

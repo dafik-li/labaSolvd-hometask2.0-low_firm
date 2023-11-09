@@ -8,6 +8,7 @@ import com.labasolvd.Persons.SuspectedPersona;
 public final class Judge {
     private Result result;
     private double sum;
+    ArithmeticException arithmeticException;
 
     public Judge(Result result, double sum) {
         this.result = result;

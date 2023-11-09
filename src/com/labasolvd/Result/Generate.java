@@ -1,9 +1,13 @@
 package com.labasolvd.Result;
 
 import com.labasolvd.Crimes.*;
+import com.labasolvd.Exceptions.CrimetypeException;
 import com.labasolvd.Persons.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public final class Generate implements LevelProsecutorInterface, LevelSolicitorInterface {
@@ -16,7 +20,17 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
     private final static Scanner scanner = new Scanner(System.in);
     private static AbstractCrime crime;
 
-    public String getCrime() throws Exception {
+    public String getCrime() throws FileNotFoundException {
+        try (PrintWriter writer = new PrintWriter(new File("test.txt"))) {
+            writer.println("Type the data below: ");
+        }
+        try (Scanner scanner = new Scanner(new File("test.txt"))) {
+            while (scanner.hasNext()) {
+                LOGGER.info(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         LOGGER.info("\n" + "Type the data below: ");
         LOGGER.info("\n" + "Type of the crime (homicide, robbery, hooliganism): ");
         String crimeName = scanner.nextLine();
@@ -29,10 +43,13 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
                 break;
             default: crime = new DefaultCrime();
         }
-        if (!crimeName.equals(crime.getTypeOfCrime())) {
-            throw new Exception("Sometimes laws don't matter!");
-        } else {
-            System.out.println();
+        try {
+            if (!crimeName.equals(crime.getTypeOfCrime())) {
+                throw new CrimetypeException();
+            }
+        } catch (CrimetypeException e) {
+            e.printStackTrace();
+            LOGGER.info("Typed a non exist crimetype");
         }
         return crimeName;
     }
@@ -58,7 +75,6 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
         }
         return levelProsecutor;
     }
-
     public static boolean isWasArrestedBefore() throws Exception {
         LOGGER.info("\n" + "Is arrested before (1 - yes, 0 - no)?: ");
         int numberForArrested = scanner.nextInt();
