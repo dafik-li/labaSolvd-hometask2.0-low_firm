@@ -1,0 +1,23 @@
+Court decision: 5.0 years
+
+Prisoner:___________________
+Gender: f
+Name: ira
+Surname: petrova
+Age: 25
+Was arrested before: false
+
+Solicitor:___________________
+Gender: m
+Name: dima
+Surname: pupkin
+Age: 30
+Level: 1
+
+Prosecutor:___________________
+Gender: m
+Name: petya
+Surname: ivanov
+Age: 40
+Level: 1
+The payment is: 2000.0

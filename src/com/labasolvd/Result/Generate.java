@@ -3,14 +3,17 @@ package com.labasolvd.Result;
 import com.labasolvd.Entity.Crimes.*;
 import com.labasolvd.Exceptions.CrimetypeException;
 import com.labasolvd.Entity.Persons.*;
+import com.labasolvd.Exceptions.ProsecutorLevelException;
+import com.labasolvd.Exceptions.SolicitorLevelException;
+import com.labasolvd.Exceptions.WasArrestedBeforeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+
+import javax.naming.PartialResultException;
+import java.io.*;
 import java.util.Scanner;
 
-public final class Generate implements LevelProsecutorInterface, LevelSolicitorInterface {
+public class Generate implements LevelProsecutorInterface, LevelSolicitorInterface {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
@@ -20,28 +23,15 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
     private final static Scanner scanner = new Scanner(System.in);
     private static AbstractCrime crime;
 
-    public String getCrime() throws FileNotFoundException {
-        try (PrintWriter writer = new PrintWriter(new File("test.txt"))) {
-            writer.println("Type the data below: ");
-        }
-        try (Scanner scanner = new Scanner(new File("test.txt"))) {
-            while (scanner.hasNext()) {
-                LOGGER.info(scanner.nextLine());
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public String getCrime() {
         LOGGER.info("\n" + "Type the data below: ");
         LOGGER.info("\n" + "Type of the crime (homicide, robbery, hooliganism): ");
         String crimeName = scanner.nextLine();
         switch (crimeName) {
-            case "homicide": crime = new HomicideCrime();
-                break;
-            case "robbery": crime = new RobberyCrime();
-                break;
-            case "hooliganism": crime = new HooliganismCrime();
-                break;
-            default: crime = new DefaultCrime();
+            case "homicide" -> crime = new HomicideCrime();
+            case "robbery" -> crime = new RobberyCrime();
+            case "hooliganism" -> crime = new HooliganismCrime();
+            default -> crime = new DefaultCrime();
         }
         try {
             if (!crimeName.equals(crime.getTypeOfCrime())) {
@@ -49,7 +39,9 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
             }
         } catch (CrimetypeException e) {
             e.printStackTrace();
-            LOGGER.info("Typed a non exist crimetype");
+            LOGGER.error("Typed a non exist crimetype: - " + crimeName);
+        } finally {
+            LOGGER.info(crimeName);
         }
         return crimeName;
     }
@@ -91,7 +83,7 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
     public final void getResult() throws Exception {
         SolicitorPersona solicitorPersona = new SolicitorPersona('m', "dima", "pupkin", 30, getSolicitorLevel());
         ProsecutorPersona prosecutorPersona = new ProsecutorPersona('m', "petya", "ivanov", 40, getProsecutorLevel());
-        SuspectedPersona suspectedPersona = new SuspectedPersona('f', "ira", "petrova", 25,isWasArrestedBefore());
+        SuspectedPersona suspectedPersona = new SuspectedPersona('f', "ira", "petrova", 25, isWasArrestedBefore());
         /*
         HooliganismCrime hooliganism = new HooliganismCrime();
         RobberyCrime robbery = new RobberyCrime();
@@ -101,8 +93,21 @@ public final class Generate implements LevelProsecutorInterface, LevelSolicitorI
         double resultYears = calcResult.exeCalc(suspectedPersona, crime, solicitorPersona, prosecutorPersona);
         Result result = new Result(resultYears, suspectedPersona, solicitorPersona, prosecutorPersona);
         double sum = calcResult.exeCalc(solicitorPersona, crime);
-        Judge totalSum = new Judge(result, sum);
         LOGGER.info("\n" + result + "\n");
-        LOGGER.info("\n" + "The payment is: " + totalSum);
+        LOGGER.info("\n" + "The payment is: " + sum);
+        try (PrintWriter writer = new PrintWriter(new File("judgement.txt"))) {
+            writer.println(result);
+            writer.println("The payment is: " + sum);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            LOGGER.error("File not exist or unwritable");
+        }
+        try (Scanner scanner = new Scanner(new File("judgement.txt"))) {
+            while (scanner.hasNext()) {
+                LOGGER.info(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

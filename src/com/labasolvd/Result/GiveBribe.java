@@ -2,9 +2,13 @@ package com.labasolvd.Result;
 
 import com.labasolvd.Entity.Persons.LevelProsecutorInterface;
 import com.labasolvd.Entity.Persons.ProsecutorPersona;
+import com.labasolvd.Exceptions.ProsecutorLevelException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public final class GiveBribe implements LevelProsecutorInterface {
@@ -16,22 +20,40 @@ public final class GiveBribe implements LevelProsecutorInterface {
     Scanner scanner = new Scanner(System.in);
 
     @Override
-    public int getProsecutorLevel() throws Exception {
+    public int getProsecutorLevel() {
         LOGGER.info("\n" + "Type a prosecutor level (from 1 - to 3): ");
         int levelProsecutor = scanner.nextInt();
-        if (levelProsecutor == 1) {
-            bribe = 100;
-        } else if (levelProsecutor == 2) {
-            bribe = 200;
-        } else if (levelProsecutor == 3) {
-            bribe = 500;
-        } else {
-            throw new Exception("Keep your eyes open");
+        try {
+            switch (levelProsecutor) {
+                case 1 -> bribe = 100;
+                case 2 -> bribe = 200;
+                case 3 -> bribe = 500;
+                default -> throw new ProsecutorLevelException("Invalid prosecutor level - " + levelProsecutor);
+            }
+        } catch (ProsecutorLevelException e) {
+            e.printStackTrace();
+            LOGGER.error("Invalid prosecutor level - " + levelProsecutor);
+        } finally {
+            LOGGER.info(levelProsecutor);
         }
         return levelProsecutor;
     }
-    public void getBribe() throws Exception {
+    public void getBribe() {
         ProsecutorPersona prosecutorPersona = new ProsecutorPersona('m', "petya", "ivanov", 40, getProsecutorLevel());
         LOGGER.info("\n" + prosecutorPersona + "\n" + "Require a bribe: " + bribe);
+        try (PrintWriter writer = new PrintWriter(new File("bribe.txt"))) {
+            writer.println(prosecutorPersona);
+            writer.println("Require a bribe: " + bribe);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            LOGGER.error("File not exist or unwritable");
+        }
+        try (Scanner scanner = new Scanner(new File("bribe.txt"))) {
+            while (scanner.hasNext()) {
+                LOGGER.info(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

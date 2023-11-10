@@ -1,23 +1,25 @@
-2023-11-09 23:52:37.226 [main] INFO  com.labasolvd.Result.Generate - Type the data below: 
-2023-11-09 23:52:37.236 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:34.877 [main] INFO  com.labasolvd.Result.Generate - 
 Type the data below: 
-2023-11-09 23:52:37.236 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:34.893 [main] INFO  com.labasolvd.Result.Generate - 
 Type of the crime (homicide, robbery, hooliganism): 
-2023-11-09 23:52:50.196 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:39.591 [main] INFO  com.labasolvd.Result.Generate - robbery
+2023-11-10 16:15:39.591 [main] INFO  com.labasolvd.Result.Generate - 
 Enter the solicitor level (from 1 - to 3): 
-2023-11-09 23:52:52.202 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:41.160 [main] INFO  com.labasolvd.Result.Generate - 
 Enter the prosecutor level (from 1 - to 3): 
-2023-11-09 23:52:52.951 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:42.114 [main] INFO  com.labasolvd.Result.Generate - 
 Is arrested before (1 - yes, 0 - no)?: 
-2023-11-09 23:52:53.560 [main] INFO  com.labasolvd.Result.Generate - 
-Court decision: 15.0 years
+2023-11-10 16:15:44.939 [main] ERROR com.labasolvd.Result.Generate - Keep your eyes openfalse
+2023-11-10 16:15:44.939 [main] INFO  com.labasolvd.Result.Generate - false
+2023-11-10 16:15:44.955 [main] INFO  com.labasolvd.Result.Generate - 
+Court decision: 5.0 years
 
 Prisoner:___________________
 Gender: f
 Name: ira
 Surname: petrova
 Age: 25
-Was arrested before: true
+Was arrested before: false
 
 Solicitor:___________________
 Gender: m
@@ -33,5 +35,28 @@ Surname: ivanov
 Age: 40
 Level: 1
 
-2023-11-09 23:52:53.560 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:44.955 [main] INFO  com.labasolvd.Result.Generate - 
 The payment is: 2000.0
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Court decision: 5.0 years
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Prisoner:___________________
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Gender: f
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Name: ira
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Surname: petrova
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Age: 25
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Was arrested before: false
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Solicitor:___________________
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Gender: m
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Name: dima
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Surname: pupkin
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Age: 30
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Level: 1
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - 
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Prosecutor:___________________
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Gender: m
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Name: petya
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Surname: ivanov
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Age: 40
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - Level: 1
+2023-11-10 16:15:44.970 [main] INFO  com.labasolvd.Result.Generate - The payment is: 2000.0

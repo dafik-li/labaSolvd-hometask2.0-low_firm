@@ -1,0 +1,6 @@
+Gender: m
+Name: dima
+Surname: pupkin
+Age: 30
+Level: 4
+Salary is: 0
