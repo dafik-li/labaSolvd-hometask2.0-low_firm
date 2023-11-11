@@ -31,10 +31,8 @@ public final class GiveBribe implements LevelProsecutorInterface {
                 default -> throw new ProsecutorLevelException("Invalid prosecutor level - " + levelProsecutor);
             }
         } catch (ProsecutorLevelException e) {
-            e.printStackTrace();
-            LOGGER.error("Invalid prosecutor level - " + levelProsecutor);
-        } finally {
-            LOGGER.info(levelProsecutor);
+            LOGGER.info("\n" + "Please, type a prosecutor level correctly(from 1 - to 3): ");
+            return scanner.nextInt();
         }
         return levelProsecutor;
     }

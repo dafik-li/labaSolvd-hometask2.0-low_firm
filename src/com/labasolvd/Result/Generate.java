@@ -1,5 +1,6 @@
 package com.labasolvd.Result;
 
+import com.labasolvd.Controller.Validate;
 import com.labasolvd.Entity.Crimes.*;
 import com.labasolvd.Exceptions.CrimetypeException;
 import com.labasolvd.Entity.Persons.*;
@@ -22,6 +23,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
     private final static double sum = 0;
     private final static Scanner scanner = new Scanner(System.in);
     private static AbstractCrime crime;
+    private final Validate validate = new Validate();
 
     public String getCrime() {
         LOGGER.info("\n" + "Type the data below: ");
@@ -35,7 +37,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         }
         try {
             if (!crimeName.equals(crime.getTypeOfCrime())) {
-                throw new CrimetypeException();
+                throw new CrimetypeException("gdfgdfgdfg");
             }
         } catch (CrimetypeException e) {
             e.printStackTrace();
@@ -46,24 +48,26 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         return crimeName;
     }
     @Override
-    public int getSolicitorLevel() throws Exception {
+    public int getSolicitorLevel() {
         LOGGER.info("\n" + "Enter the solicitor level (from 1 - to 3): ");
         int levelSolicitor = scanner.nextInt();
-        if (levelSolicitor > 3) {
-            throw new Exception("\n" + "Too big solicitor level!");
-        } else if (levelSolicitor < 1) {
-            throw new Exception("\n" + "Too small solicitor level!");
+        try {
+            validate.validateSolicitorLevel(levelSolicitor);
+        } catch (Exception e) {
+            LOGGER.info(e.toString());
+            levelSolicitor = getSolicitorLevel();
         }
         return levelSolicitor;
     }
     @Override
-    public int getProsecutorLevel() throws Exception {
+    public int getProsecutorLevel() {
         LOGGER.info("\n" + "Enter the prosecutor level (from 1 - to 3): ");
         int levelProsecutor = scanner.nextInt();
-        if (levelProsecutor > 3) {
-            throw new Exception("\n" + "Too big solicitor level!");
-        } else if (levelProsecutor < 1) {
-            throw new Exception("\n" + "Too small solicitor level!");
+        try {
+            validate.validateProsecutorLevel(levelProsecutor);
+        } catch (Exception e) {
+            LOGGER.info(e.toString());
+            levelProsecutor = getProsecutorLevel();
         }
         return levelProsecutor;
     }
