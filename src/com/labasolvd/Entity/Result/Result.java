@@ -1,10 +1,10 @@
-package com.labasolvd.Result;
+package com.labasolvd.Entity.Result;
 
 import com.labasolvd.Entity.Persons.ProsecutorPersona;
 import com.labasolvd.Entity.Persons.SolicitorPersona;
 import com.labasolvd.Entity.Persons.SuspectedPersona;
 
-public final class Result {
+public class Result {
     private double resultYears;
     private SuspectedPersona suspectedPersona;
     private SolicitorPersona solicitorPersona;

@@ -1,6 +1,6 @@
-package com.labasolvd.Controller;
+package com.labasolvd.Execute;
 
-import com.labasolvd.Result.PaySalary;
+import com.labasolvd.Controller.PaySalary;
 
 public class CheckSalary {
     public static void main(String[] args) throws Exception {

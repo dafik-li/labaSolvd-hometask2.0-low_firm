@@ -1,11 +1,12 @@
-package com.labasolvd.Result;
+package com.labasolvd.Controller;
 
 import com.labasolvd.Entity.Crimes.AbstractCrime;
 import com.labasolvd.Entity.Persons.ProsecutorPersona;
 import com.labasolvd.Entity.Persons.SolicitorPersona;
 import com.labasolvd.Entity.Persons.SuspectedPersona;
+import com.labasolvd.Entity.Result.Result;
 
-public final class Judge {
+public class Judge {
     private Result result;
     private double sum;
 

@@ -1,6 +1,6 @@
-package com.labasolvd.Controller;
+package com.labasolvd.Execute;
 
-import com.labasolvd.Result.GiveBribe;
+import com.labasolvd.Controller.GiveBribe;
 
 public class CheckBribe {
     public static void main(String[] args) throws Exception {

@@ -2,5 +2,5 @@ Gender: m
 Name: petya
 Surname: ivanov
 Age: 40
-Level: 7
-Require a bribe: 0
+Level: 3
+Require a bribe: 500
