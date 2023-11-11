@@ -1,11 +1,11 @@
-Court decision: 5.0 years
+Court decision: 0.0 years
 
 Prisoner:___________________
 Gender: f
 Name: ira
 Surname: petrova
 Age: 25
-Was arrested before: false
+Was arrested before: true
 
 Solicitor:___________________
 Gender: m
@@ -20,4 +20,4 @@ Name: petya
 Surname: ivanov
 Age: 40
 Level: 1
-The payment is: 2000.0
+The payment is: 0.0

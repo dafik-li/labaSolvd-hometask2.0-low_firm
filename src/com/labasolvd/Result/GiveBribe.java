@@ -5,18 +5,17 @@ import com.labasolvd.Entity.Persons.ProsecutorPersona;
 import com.labasolvd.Exceptions.ProsecutorLevelException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public final class GiveBribe implements LevelProsecutorInterface {
+public class GiveBribe implements LevelProsecutorInterface {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
     private final static Logger LOGGER = (Logger) LogManager.getLogger(GiveBribe.class);
-    private static int bribe;
+    private int bribe;
     Scanner scanner = new Scanner(System.in);
 
     @Override

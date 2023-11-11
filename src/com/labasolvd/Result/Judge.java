@@ -1,11 +1,18 @@
 package com.labasolvd.Result;
 
 import com.labasolvd.Entity.Crimes.AbstractCrime;
+import com.labasolvd.Entity.Crimes.CrimeInterface;
 import com.labasolvd.Entity.Persons.ProsecutorPersona;
 import com.labasolvd.Entity.Persons.SolicitorPersona;
 import com.labasolvd.Entity.Persons.SuspectedPersona;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
-public final class Judge {
+public class Judge {
+    static {
+        System.setProperty("log4j.configurationFile", "log4j2.xml");
+    }
+    private final static Logger LOGGER = (Logger) LogManager.getLogger(Judge.class);
     private Result result;
     private double sum;
 

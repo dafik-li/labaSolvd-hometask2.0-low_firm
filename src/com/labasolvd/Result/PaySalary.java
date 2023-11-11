@@ -5,7 +5,6 @@ import com.labasolvd.Entity.Persons.SolicitorPersona;
 import com.labasolvd.Exceptions.SolicitorLevelException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -16,7 +15,7 @@ public final class PaySalary implements LevelSolicitorInterface {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
     private final static Logger LOGGER = (Logger) LogManager.getLogger(PaySalary.class);
-    private static int salary;
+    private int salary;
     Scanner scanner = new Scanner(System.in);
 
     @Override
