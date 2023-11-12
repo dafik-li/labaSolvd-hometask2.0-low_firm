@@ -3,6 +3,10 @@ package com.labasolvd.Controller;
 import com.labasolvd.Entity.Result.Result;
 import com.labasolvd.Entity.Crimes.*;
 import com.labasolvd.Entity.Persons.*;
+import com.labasolvd.Exceptions.CrimetypeException;
+import com.labasolvd.Exceptions.ProsecutorLevelException;
+import com.labasolvd.Exceptions.SolicitorLevelException;
+import com.labasolvd.Exceptions.WasArrestedBeforeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import java.io.*;
@@ -15,13 +19,14 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
     private final static Logger LOGGER = (Logger) LogManager.getLogger(Generate.class);
     private final static Object Result = null;
     private final static double sum = 0;
-    private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;
     private final Validate validate;
     private final CrimeFactory crimeFactory;
 
     public Generate() {
         this.validate = new Validate();
         this.crimeFactory = new CrimeFactory();
+        this.scanner = new Scanner(System.in);
     }
     public AbstractCrime getCrime() {
         LOGGER.info("\n" + "Type of the crime (homicide, robbery, hooliganism): ");
@@ -29,7 +34,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         try {
             LOGGER.info(crimeName);
             validate.validateCrimeName(crimeName);
-        } catch (Exception e) {
+        } catch (CrimetypeException e) {
             LOGGER.error(e.toString());
             return getCrime();
         }
@@ -42,7 +47,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         try {
             LOGGER.info(levelSolicitor);
             validate.validateSolicitorLevel(levelSolicitor);
-        } catch (Exception e) {
+        } catch (SolicitorLevelException e) {
             LOGGER.error(e.toString());
             levelSolicitor = getSolicitorLevel();
         }
@@ -55,7 +60,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         try {
             LOGGER.info(levelProsecutor);
             validate.validateProsecutorLevel(levelProsecutor);
-        } catch (Exception e) {
+        } catch (ProsecutorLevelException e) {
             LOGGER.error(e.toString());
             levelProsecutor = getProsecutorLevel();
         }
@@ -67,7 +72,7 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         try {
             LOGGER.info(numberForArrested);
             validate.validateArrestedBefore(numberForArrested);
-        } catch (Exception e) {
+        } catch (WasArrestedBeforeException e) {
             LOGGER.error(e.toString());
         }
         if (numberForArrested == 1) {
