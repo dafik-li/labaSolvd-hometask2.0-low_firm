@@ -17,7 +17,7 @@ public class Validate {
             default -> abstractCrime = new DefaultCrime();
         }
         if (!crimeName.equals(abstractCrime.getTypeOfCrime())) {
-            throw new CrimetypeException("Enter a valid crime name. You typed - " + crimeName);
+            throw new CrimetypeException("Entered an invalid crime name. You typed - " + crimeName);
         }
     }
     public void validateSolicitorLevel(int levelSolicitor) throws SolicitorLevelException {

@@ -10,6 +10,7 @@ import com.labasolvd.Exceptions.WasArrestedBeforeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import java.io.*;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Generate implements LevelProsecutorInterface, LevelSolicitorInterface {
@@ -29,25 +30,32 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         this.scanner = new Scanner(System.in);
     }
     public AbstractCrime getCrime() {
-        LOGGER.info("\n" + "Type of the crime (homicide, robbery, hooliganism): ");
+        LOGGER.info("\n" + "Type the crime (homicide, robbery, hooliganism): ");
         String crimeName = scanner.nextLine();
         try {
-            LOGGER.info(crimeName);
             validate.validateCrimeName(crimeName);
         } catch (CrimetypeException e) {
             LOGGER.error(e.toString());
             return getCrime();
         }
+        LOGGER.info("The type of crime is - " + crimeName);
         return crimeFactory.create(crimeName);
     }
     @Override
     public int getSolicitorLevel() {
         LOGGER.info("\n" + "Enter the solicitor level (from 1 - to 3): ");
-        int levelSolicitor = scanner.nextInt();
+        int levelSolicitor;
+        String level = scanner.nextLine();
         try {
-            LOGGER.info(levelSolicitor);
-            validate.validateSolicitorLevel(levelSolicitor);
-        } catch (SolicitorLevelException e) {
+            levelSolicitor = Integer.parseInt(level);
+            try {
+                validate.validateSolicitorLevel(levelSolicitor);
+                LOGGER.info("Solicitor level is - " + levelSolicitor);
+            } catch (SolicitorLevelException e) {
+                LOGGER.error(e.toString());
+                levelSolicitor = getSolicitorLevel();
+            }
+        } catch (NumberFormatException e) {
             LOGGER.error(e.toString());
             levelSolicitor = getSolicitorLevel();
         }
@@ -56,11 +64,18 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
     @Override
     public int getProsecutorLevel() {
         LOGGER.info("\n" + "Enter the prosecutor level (from 1 - to 3): ");
-        int levelProsecutor = scanner.nextInt();
+        int levelProsecutor;
+        String level = scanner.nextLine();
         try {
-            LOGGER.info(levelProsecutor);
-            validate.validateProsecutorLevel(levelProsecutor);
-        } catch (ProsecutorLevelException e) {
+            levelProsecutor = Integer.parseInt(level);
+            try {
+                validate.validateProsecutorLevel(levelProsecutor);
+                LOGGER.info("Prosecutor level is - " + levelProsecutor);
+            } catch (ProsecutorLevelException e) {
+                LOGGER.error(e.toString());
+                levelProsecutor = getProsecutorLevel();
+            }
+        } catch (NumberFormatException e) {
             LOGGER.error(e.toString());
             levelProsecutor = getProsecutorLevel();
         }
@@ -70,8 +85,8 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
         LOGGER.info("\n" + "Is arrested before (1 - yes, 0 - no)?: ");
         int numberForArrested = scanner.nextInt();
         try {
-            LOGGER.info(numberForArrested);
             validate.validateArrestedBefore(numberForArrested);
+            LOGGER.info("You typed - " + numberForArrested);
         } catch (WasArrestedBeforeException e) {
             LOGGER.error(e.toString());
         }
