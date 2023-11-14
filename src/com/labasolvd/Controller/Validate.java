@@ -40,7 +40,8 @@ public class Validate {
         if (numberForArrested == 1) {
         }
         if (numberForArrested == 0) {
-        } else {
+        }
+        else {
             throw new WasArrestedBeforeException("Please type 1 or 0");
         }
     }

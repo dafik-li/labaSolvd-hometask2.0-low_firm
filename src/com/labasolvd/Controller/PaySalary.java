@@ -1,7 +1,7 @@
 package com.labasolvd.Controller;
 
 import com.labasolvd.Entity.Persons.LevelSolicitorInterface;
-import com.labasolvd.Entity.Persons.SolicitorPersona;
+import com.labasolvd.Entity.Persons.SolicitorPerson;
 import com.labasolvd.Exceptions.SolicitorLevelException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
@@ -41,10 +41,10 @@ public final class PaySalary implements LevelSolicitorInterface {
         return levelSolicitor;
     }
     public void getSalary() {
-        SolicitorPersona solicitorPersona = new SolicitorPersona('m', "dima", "pupkin", 30, getSolicitorLevel());
-        LOGGER.info("\n" + solicitorPersona + "\n" + "Earns: " + salary);
+        SolicitorPerson solicitorPerson = new SolicitorPerson('m', "dima", "pupkin", 30, getSolicitorLevel());
+        LOGGER.info("\n" + solicitorPerson + "\n" + "Earns: " + salary);
         try (PrintWriter writer = new PrintWriter(new File("salary.txt"))) {
-            writer.println(solicitorPersona);
+            writer.println(solicitorPerson);
             writer.println("Salary is: " + salary);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

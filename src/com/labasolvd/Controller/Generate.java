@@ -82,13 +82,13 @@ public class Generate implements LevelProsecutorInterface, LevelSolicitorInterfa
     }
     public void getResult() {
         AbstractCrime crime = getCrime();
-        SolicitorPersona solicitorPersona = new SolicitorPersona('m', "dima", "pupkin", 30, getSolicitorLevel());
-        ProsecutorPersona prosecutorPersona = new ProsecutorPersona('m', "petya", "ivanov", 40, getProsecutorLevel());
-        SuspectedPersona suspectedPersona = new SuspectedPersona('f', "ira", "petrova", 25, isWasArrestedBefore());
+        SolicitorPerson solicitorPerson = new SolicitorPerson('m', "dima", "pupkin", 30, getSolicitorLevel());
+        ProsecutorPerson prosecutorPerson = new ProsecutorPerson('m', "petya", "ivanov", 40, getProsecutorLevel());
+        SuspectedPerson suspectedPerson = new SuspectedPerson('f', "ira", "petrova", 25, isWasArrestedBefore());
         Judge calcResult = new Judge((com.labasolvd.Entity.Result.Result) Result, sum);
-        double resultYears = calcResult.exeCalc(suspectedPersona, crime, solicitorPersona, prosecutorPersona);
-        Result result = new Result(resultYears, suspectedPersona, solicitorPersona, prosecutorPersona);
-        double sum = calcResult.exeCalc(solicitorPersona, crime);
+        double resultYears = calcResult.exeCalc(suspectedPerson, crime, solicitorPerson, prosecutorPerson);
+        Result result = new Result(resultYears, suspectedPerson, solicitorPerson, prosecutorPerson);
+        double sum = calcResult.exeCalc(solicitorPerson, crime);
         LOGGER.info("\n" + result + "\n");
         LOGGER.info("\n" + "The payment is: " + sum);
         try (PrintWriter writer = new PrintWriter(new File("judgement.txt"))) {

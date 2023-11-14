@@ -1,5 +1,62 @@
-2023-11-12 15:34:45.497 [main] INFO  com.labasolvd.Controller.Generate - 
+2023-11-14 18:36:49.693 [main] INFO  com.labasolvd.Controller.Generate - 
 Type of the crime (homicide, robbery, hooliganism): 
-2023-11-12 15:34:57.402 [main] INFO  com.labasolvd.Controller.Generate - robbery
-2023-11-12 15:34:57.405 [main] INFO  com.labasolvd.Controller.Generate - 
+2023-11-14 18:37:04.133 [main] INFO  com.labasolvd.Controller.Generate - robbery
+2023-11-14 18:37:04.133 [main] INFO  com.labasolvd.Controller.Generate - 
 Enter the solicitor level (from 1 - to 3): 
+2023-11-14 18:37:04.882 [main] INFO  com.labasolvd.Controller.Generate - 1
+2023-11-14 18:37:04.882 [main] INFO  com.labasolvd.Controller.Generate - 
+Enter the prosecutor level (from 1 - to 3): 
+2023-11-14 18:37:05.268 [main] INFO  com.labasolvd.Controller.Generate - 1
+2023-11-14 18:37:05.268 [main] INFO  com.labasolvd.Controller.Generate - 
+Is arrested before (1 - yes, 0 - no)?: 
+2023-11-14 18:37:06.186 [main] INFO  com.labasolvd.Controller.Generate - 1
+2023-11-14 18:37:06.186 [main] ERROR com.labasolvd.Controller.Generate - com.labasolvd.Exceptions.WasArrestedBeforeException: Please type 1 or 0
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - 
+Court decision: 15.0 years
+
+Prisoner:___________________
+Gender: f
+Name: ira
+Surname: petrova
+Age: 25
+Was arrested before: true
+
+Solicitor:___________________
+Gender: m
+Name: dima
+Surname: pupkin
+Age: 30
+Level: 1
+
+Prosecutor:___________________
+Gender: m
+Name: petya
+Surname: ivanov
+Age: 40
+Level: 1
+
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - 
+The payment is: 2000.0
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Court decision: 15.0 years
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - 
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Prisoner:___________________
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Gender: f
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Name: ira
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Surname: petrova
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Age: 25
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Was arrested before: true
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - 
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Solicitor:___________________
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Gender: m
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Name: dima
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Surname: pupkin
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Age: 30
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Level: 1
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - 
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Prosecutor:___________________
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Gender: m
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Name: petya
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Surname: ivanov
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Age: 40
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - Level: 1
+2023-11-14 18:37:06.209 [main] INFO  com.labasolvd.Controller.Generate - The payment is: 2000.0

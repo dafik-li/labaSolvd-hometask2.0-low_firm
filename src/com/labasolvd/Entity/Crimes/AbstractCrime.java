@@ -1,5 +1,7 @@
 package com.labasolvd.Entity.Crimes;
 
+import java.util.Objects;
+
 abstract public class AbstractCrime implements CrimeInterface{
     protected String typeOfCrime;
     protected int termOfPunishment;
@@ -15,5 +17,17 @@ abstract public class AbstractCrime implements CrimeInterface{
     @Override
     public void setTermOfPunishment(int termOfPunishment) {
         this.termOfPunishment = termOfPunishment;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractCrime)) return false;
+        AbstractCrime that = (AbstractCrime) o;
+        return getTermOfPunishment() == that.getTermOfPunishment() &&
+                getTypeOfCrime().equals(that.getTypeOfCrime());
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getTypeOfCrime(), getTermOfPunishment());
     }
 }

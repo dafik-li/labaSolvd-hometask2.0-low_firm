@@ -1,7 +1,7 @@
 package com.labasolvd.Controller;
 
 import com.labasolvd.Entity.Persons.LevelProsecutorInterface;
-import com.labasolvd.Entity.Persons.ProsecutorPersona;
+import com.labasolvd.Entity.Persons.ProsecutorPerson;
 import com.labasolvd.Exceptions.ProsecutorLevelException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
@@ -38,10 +38,10 @@ public class GiveBribe implements LevelProsecutorInterface {
         return levelProsecutor;
     }
     public void getBribe() {
-        ProsecutorPersona prosecutorPersona = new ProsecutorPersona('m', "petya", "ivanov", 40, getProsecutorLevel());
-        LOGGER.info("\n" + prosecutorPersona + "\n" + "Require a bribe: " + bribe);
+        ProsecutorPerson prosecutorPerson = new ProsecutorPerson('m', "petya", "ivanov", 40, getProsecutorLevel());
+        LOGGER.info("\n" + prosecutorPerson + "\n" + "Require a bribe: " + bribe);
         try (PrintWriter writer = new PrintWriter(new File("bribe.txt"))) {
-            writer.println(prosecutorPersona);
+            writer.println(prosecutorPerson);
             writer.println("Require a bribe: " + bribe);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

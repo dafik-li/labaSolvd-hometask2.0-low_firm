@@ -1,9 +1,9 @@
 package com.labasolvd.Controller;
 
 import com.labasolvd.Entity.Crimes.AbstractCrime;
-import com.labasolvd.Entity.Persons.ProsecutorPersona;
-import com.labasolvd.Entity.Persons.SolicitorPersona;
-import com.labasolvd.Entity.Persons.SuspectedPersona;
+import com.labasolvd.Entity.Persons.ProsecutorPerson;
+import com.labasolvd.Entity.Persons.SolicitorPerson;
+import com.labasolvd.Entity.Persons.SuspectedPerson;
 import com.labasolvd.Entity.Result.Result;
 
 public class Judge {
@@ -26,22 +26,22 @@ public class Judge {
     public void setSum(double sum) {
         this.sum = sum;
     }
-    public double exeCalc(SuspectedPersona suspectedPersona, AbstractCrime abstractCrime, SolicitorPersona solicitorPersona, ProsecutorPersona prosecutorPersona) {
+    public double exeCalc(SuspectedPerson suspectedPerson, AbstractCrime abstractCrime, SolicitorPerson solicitorPerson, ProsecutorPerson prosecutorPerson) {
         double resultYears;
         double ratio;
 
-        if (suspectedPersona.isWasArrestedBefore()) {
+        if (suspectedPerson.isWasArrestedBefore()) {
             ratio = 1.5;
         } else {
             ratio = 0.5;
         }
-        resultYears = (ratio * abstractCrime.getTermOfPunishment()) / ((double) solicitorPersona.getSolicitorLevel() / prosecutorPersona.getProsecutorLevel());
+        resultYears = (ratio * abstractCrime.getTermOfPunishment()) / ((double) solicitorPerson.getSolicitorLevel() / prosecutorPerson.getProsecutorLevel());
         return resultYears;
     }
-    public double exeCalc(SolicitorPersona solicitorPersona, AbstractCrime abstractCrime) {
+    public double exeCalc(SolicitorPerson solicitorPerson, AbstractCrime abstractCrime) {
         double sum;
 
-        sum = 1000 * solicitorPersona.getSolicitorLevel() * ((double) abstractCrime.getTermOfPunishment() / 5);
+        sum = 1000 * solicitorPerson.getSolicitorLevel() * ((double) abstractCrime.getTermOfPunishment() / 5);
         return sum;
     }
     @Override

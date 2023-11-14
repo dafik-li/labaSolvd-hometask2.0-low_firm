@@ -1,16 +1,32 @@
 package com.labasolvd.Entity.Persons;
 
-abstract public class AbstractPersona implements PersonInterface {
+import java.util.Objects;
+
+abstract public class AbstractPerson implements PersonInterface {
     protected char gender;
     protected String name;
     protected String surname;
     protected int age;
 
-    public AbstractPersona(char gender, String name, String surname, int age) {
+    public AbstractPerson(char gender, String name, String surname, int age) {
         this.gender = gender;
         this.name = name;
         this.surname = surname;
         this.age = age;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AbstractPerson)) return false;
+        AbstractPerson that = (AbstractPerson) o;
+        return getGender() == that.getGender() &&
+                getAge() == that.getAge() &&
+                getName().equals(that.getName()) &&
+                getSurname().equals(that.getSurname());
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGender(), getName(), getSurname(), getAge());
     }
     @Override
     public char getGender() {
