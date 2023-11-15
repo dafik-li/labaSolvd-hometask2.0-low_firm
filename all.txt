@@ -1,0 +1,61 @@
+2023-11-15 17:03:30.076 [main] INFO  com.labasolvd.controller.Generator - 
+Type the crime (homicide, robbery, hooliganism): 
+2023-11-15 17:03:33.420 [main] INFO  com.labasolvd.controller.Generator - The type of crime is - robbery
+2023-11-15 17:03:33.423 [main] INFO  com.labasolvd.controller.Generator - 
+Enter the solicitor level (from 1 - to 3): 
+2023-11-15 17:03:34.763 [main] INFO  com.labasolvd.controller.Generator - Solicitor level is - 2
+2023-11-15 17:03:34.764 [main] INFO  com.labasolvd.controller.Generator - 
+Enter the prosecutor level (from 1 - to 3): 
+2023-11-15 17:03:35.394 [main] INFO  com.labasolvd.controller.Generator - Prosecutor level is - 2
+2023-11-15 17:03:35.396 [main] INFO  com.labasolvd.controller.Generator - 
+Is arrested before (1 - yes, 0 - no)?: 
+2023-11-15 17:03:36.371 [main] ERROR com.labasolvd.controller.Generator - com.labasolvd.exceptions.WasArrestedBeforeException: Please type 1 or 0
+2023-11-15 17:03:36.384 [main] INFO  com.labasolvd.controller.Generator - 
+Court decision: 15.0 years
+
+Prisoner:___________________
+Gender: f
+Name: ira
+Surname: petrova
+Age: 25
+Was arrested before: true
+
+Solicitor:___________________
+Gender: m
+Name: dima
+Surname: pupkin
+Age: 30
+Level: 2
+
+Prosecutor:___________________
+Gender: m
+Name: petya
+Surname: ivanov
+Age: 40
+Level: 2
+
+2023-11-15 17:03:36.385 [main] INFO  com.labasolvd.controller.Generator - 
+The payment is: 4000.0
+2023-11-15 17:03:36.388 [main] INFO  com.labasolvd.controller.Generator - Court decision: 15.0 years
+2023-11-15 17:03:36.389 [main] INFO  com.labasolvd.controller.Generator - 
+2023-11-15 17:03:36.389 [main] INFO  com.labasolvd.controller.Generator - Prisoner:___________________
+2023-11-15 17:03:36.389 [main] INFO  com.labasolvd.controller.Generator - Gender: f
+2023-11-15 17:03:36.389 [main] INFO  com.labasolvd.controller.Generator - Name: ira
+2023-11-15 17:03:36.389 [main] INFO  com.labasolvd.controller.Generator - Surname: petrova
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - Age: 25
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - Was arrested before: true
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - 
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - Solicitor:___________________
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - Gender: m
+2023-11-15 17:03:36.390 [main] INFO  com.labasolvd.controller.Generator - Name: dima
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - Surname: pupkin
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - Age: 30
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - Level: 2
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - 
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - Prosecutor:___________________
+2023-11-15 17:03:36.391 [main] INFO  com.labasolvd.controller.Generator - Gender: m
+2023-11-15 17:03:36.392 [main] INFO  com.labasolvd.controller.Generator - Name: petya
+2023-11-15 17:03:36.392 [main] INFO  com.labasolvd.controller.Generator - Surname: ivanov
+2023-11-15 17:03:36.392 [main] INFO  com.labasolvd.controller.Generator - Age: 40
+2023-11-15 17:03:36.392 [main] INFO  com.labasolvd.controller.Generator - Level: 2
+2023-11-15 17:03:36.392 [main] INFO  com.labasolvd.controller.Generator - The payment is: 4000.0

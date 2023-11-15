@@ -1,2 +1,0 @@
-null
-The payment is: 0.0

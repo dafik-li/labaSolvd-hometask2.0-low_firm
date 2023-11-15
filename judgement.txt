@@ -1,11 +1,11 @@
-Court decision: 5.0 years
+Court decision: 15.0 years
 
 Prisoner:___________________
 Gender: f
 Name: ira
 Surname: petrova
 Age: 25
-Was arrested before: false
+Was arrested before: true
 
 Solicitor:___________________
 Gender: m
